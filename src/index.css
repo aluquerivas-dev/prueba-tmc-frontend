@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos adicionales personalizados */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50;
+  }
+
+  /* Animaciones personalizadas */
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 focus:ring-primary/50;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 focus:ring-secondary/50;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90 focus:ring-accent/50;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all;
+  }
+
+  .animate-fade-in-out {
+    animation: fadeInOut 2s ease-in-out;
+  }
+  
+  .fixed-content-wrapper {
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Nuevo espacio para el breadcrumbs y header fijo */
+  .header-space {
+    padding-top: 4rem;
+  }
+}
